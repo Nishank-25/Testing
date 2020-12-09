@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+//Lambda Expressions
+
+typedef double Func(double);
+double one(double x) { return 1; }
+double call_a_function(Func f) { return f(12); }
+
+int main() {
+	
+	//Lambda expressions 
+	
+	double n=3;
+
+	n = call_a_function(one);//without lambda expression
+	cout << n;
+
+    n = call_a_function([] (double x) { return 1.0; }); //with lambda expressions
+	cout << n;
+	n = 2;
+
+	n = call_a_function([](double x)->double { return 1; });//with lambda expressions specifying type explicitly
+	cout << n;
+
+
+}
